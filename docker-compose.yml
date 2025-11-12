@@ -16,6 +16,8 @@ services:
     stdin_open: true
     tty: true
     command: /bin/bash
+    # Remove the command: above to use the default CMD from the image, and uncomment the restart policy below
+    # restart: unless-stopped
     networks:
       - deepwiki-network
 
