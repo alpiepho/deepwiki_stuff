@@ -36,6 +36,20 @@ curl http://10.0.0.60:11434/api/tags
 
 ```
 
+## Usage stuff for docker-compose.yml
+```
+# Start the container
+docker-compose up -d
+
+# Access the bash shell (equivalent to your -it flags)
+docker-compose exec deepwiki /bin/bash
+
+# View logs
+docker-compose logs -f deepwiki
+
+# Stop the container
+docker-compose down
+```
 
 ## REFERENCES
 - https://github.com/AsyncFuncAI/deepwiki-open

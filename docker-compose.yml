@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  deepwiki:
+    image: deepwiki:ollama-local
+    container_name: deepwiki
+    ports:
+      - "3001:3000"
+      - "8001:8001"
+    volumes:
+      - ~/.adalflow:/root/.adalflow
+    environment:
+      - OLLAMA_HOST=http://10.0.0.60:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    networks:
+      - deepwiki-network
+
+networks:
+  deepwiki-network:
+    driver: bridge
